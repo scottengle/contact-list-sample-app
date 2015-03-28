@@ -1,1 +1,1 @@
-# Sample Application For Under Armor
+# Sample Contact List Application
