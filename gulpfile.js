@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var _ = require('lodash');
 var wrench = require('wrench');
 
 var options = {
@@ -24,6 +23,6 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
   require('./gulp/' + file)(options);
 });
 
-gulp.task('default', ['clean'], function () {
-    gulp.start('build');
+gulp.task('default', [], function () {
+    gulp.start('serve');
 });

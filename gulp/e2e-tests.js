@@ -30,6 +30,5 @@ module.exports = function(options) {
   }
 
   gulp.task('protractor', ['protractor:src']);
-  gulp.task('protractor:src', ['serve:e2e', 'webdriver-update'], runProtractor);
-  gulp.task('protractor:dist', ['serve:e2e-dist', 'webdriver-update'], runProtractor);
+  gulp.task('protractor:src', ['scripts', 'serve:e2e', 'webdriver-update'], runProtractor);
 };

@@ -40,19 +40,11 @@ module.exports = function(options) {
     selector: '[ng-app]'// Only needed for angular apps
   }));
 
-  gulp.task('serve', ['watch'], function () {
-    browserSyncInit([options.tmp + '/serve', options.src]);
+  gulp.task('serve', ['scripts'], function () {
+    browserSyncInit([options.src]);
   });
 
-  gulp.task('serve:dist', ['build'], function () {
-    browserSyncInit(options.dist);
-  });
-
-  gulp.task('serve:e2e', ['inject'], function () {
-    browserSyncInit([options.tmp + '/serve', options.src], []);
-  });
-
-  gulp.task('serve:e2e-dist', ['build'], function () {
-    browserSyncInit(options.dist, []);
+  gulp.task('serve:e2e', ['scripts'], function () {
+    browserSyncInit([options.src], []);
   });
 };
