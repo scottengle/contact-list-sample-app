@@ -7,11 +7,12 @@ a {
 }
 
 .container {
-  width: 1170px;
+  width: 90%;
+  max-width: 1170px;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .navbar {
@@ -81,8 +82,8 @@ a {
   float: left;
   width: 33.33%;
   position: relative;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   box-sizing: border-box;
 }
 
@@ -107,4 +108,48 @@ a {
 
 hr {
   clear: both;
+}
+
+@media screen and (max-width: 640px) {
+  .col {
+    float: left;
+    width: 50%;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 470px) {
+
+  nav, .navbar {
+    float: left;
+    clear: left;
+    margin: 0 0 10px;
+    width: 100%;
+  }
+
+  .col {
+    display: block;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+
+  header nav li {
+    margin: 0;
+    background: #efefef;
+    display: block;
+    margin-bottom: 3px;
+  }
+  header nav a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
 }
