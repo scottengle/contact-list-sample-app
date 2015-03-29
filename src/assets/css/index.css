@@ -225,11 +225,11 @@ select.state_filter {
   float: left;
 }
 
-span.per_page {
+span.per-page {
   margin-right: 5px;
 }
 
-div.per_page {
+div.per-page {
   float: right;
   vertical-align: middle;
 }
