@@ -206,6 +206,32 @@ input.search {
   border: 2px solid #CB1635;
   margin-bottom: 20px;
   padding: 5px;
+  float: left;
+  height: 30px;
+}
+
+select {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
+  margin-bottom: 20px;
+  height: 30px;
+  padding: 5px;
+}
+
+select.state_filter {
+  margin-left: 15px;
+  float: left;
+}
+
+span.per_page {
+  margin-right: 5px;
+}
+
+div.per_page {
+  float: right;
+  vertical-align: middle;
 }
 
 hr {
@@ -240,6 +266,15 @@ h1.banner {
     padding-right: 15px;
     box-sizing: border-box;
   }
+
+  .address {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
 }
 
 /* Media Queries */
@@ -272,5 +307,21 @@ h1.banner {
     display: block;
     padding: 10px;
     text-align: center;
+  }
+
+  .address {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+  
+  .email {
+    display: none;
+  }
+
+  .join-date {
+    display: none;
   }
 }

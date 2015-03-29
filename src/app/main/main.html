@@ -12,33 +12,41 @@
 
   <!--<p><a class="button" ng-href="#" >SPLENDID!</a></p>-->
 
-  <input class="search" type="search" ng-model="search.full_name" placeholder="SEARCH BY NAME">
+  <div>
+  <input class="search" type="search" ng-model="search.full_name" placeholder="SEARCH BY NAME"> 
+  <select class="state_filter" type="select" ng-model="select.state">
+    <option value="">FILTER BY STATE</option>
+    <option ng-repeat="state in member_states" value="{{state}}">{{state}}</option>
+  </select>
+  <div class="per_page"><span class="per_page">PER PAGE: </span><select class="per_page" ng-model="pager.per_page" ng-init="pager.per_page = pager.pager_options[0]" ng-options="option for option in pager.pager_options">
+  </select></div>
+  </div>
 
   <div class="table">
     <div class="tr">
-      <div class="th left-top-rounded">MEMBER NAME</div>
-      <div class="th">ADDRESS</div>
-      <div class="th">PHONE</div>
-      <div class="th">EMAIL</div>
-      <div class="th">JOIN DATE</div>
+      <div class="th full-name left-top-rounded">MEMBER NAME</div>
+      <div class="th address">ADDRESS</div>
+      <div class="th phone">PHONE</div>
+      <div class="th email">EMAIL</div>
+      <div class="th join-date">JOIN DATE</div>
       <div class="th right-top-rounded"></div>
     </div>
-    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in members | orderBy:'last_name' | filter:search">
-      <div class="td">{{member.first_name}} {{member.last_name}}</div>
-      <div class="td">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
-      <div class="td">{{member.formatted_phone}}</div>
-      <div class="td"><a ng-href="mailto:{{member.email}}">{{member.email}}</a></div>
-      <div class="td">{{member.join_date}}</div>
+    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in members | orderBy:'last_name' | filter:search | filter:select | limitTo:pager.per_page:30">
+      <div class="td full-name">{{member.first_name}} {{member.last_name}}</div>
+      <div class="td address">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
+      <div class="td phone">{{member.formatted_phone}}</div>
+      <div class="td email"><a ng-href="mailto:{{member.email}}">{{member.email}}</a></div>
+      <div class="td join-date">{{member.join_date}}</div>
       <div class="td narrow">
         <button type="button" class="button">MEMBER PROFILE</button>
       </div>
     </div>
     <div class="tr">
-      <div class="th left-bottom-rounded">&nbsp;</div>
-      <div class="th"></div>
-      <div class="th"></div>
-      <div class="th"></div>
-      <div class="th"></div>
+      <div class="th full-name left-bottom-rounded">&nbsp;</div>
+      <div class="th address"></div>
+      <div class="th phone"></div>
+      <div class="th email"></div>
+      <div class="th join-date"></div>
       <div class="th right-bottom-rounded"></div>
     </div>    
   </div>
