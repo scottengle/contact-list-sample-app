@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleAssignment', ['ui.router'])
+angular.module('aaae', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {

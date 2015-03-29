@@ -21,12 +21,12 @@ function formatFullName(firstName, lastName) {
   return format('{0} {1}', firstName, lastName);
 }
 
-angular.module('sampleAssignment')
+angular.module('aaae')
   .controller('MainCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 
     $scope.pager = {};
     $scope.pager.pagerOptions = [10, 20, 50];
-    $scope.pager.currentPage = 1;
+    $scope.currentPage = 1;
     $scope.memberStates = [];
 
     $http.get('/data/sample-data.json')
@@ -50,16 +50,36 @@ angular.module('sampleAssignment')
     $scope.paginate = function() {
       $timeout(function() {
         $scope.pager.numPages = Math.ceil($scope.filterMembers.length/$scope.pager.perPage);
+        $scope.currentPage = 1;
       }, 10);
     };
 
-  }])
-.filter('startFrom', function() {
-  return function(input, start) {
-    if(input) {
-      start = +start; //parse to int
-        return input.slice(start);
+    $scope.pageUp = function() {
+      if($scope.currentPage < $scope.pager.numPages) {
+        $scope.currentPage++;
       }
-    return [];
-  };
-});
+    }
+
+    $scope.pageDown = function() {
+      if($scope.currentPage > 1) {
+        $scope.currentPage--;
+      }
+    }
+
+  }])
+  .filter('aaaeStartFrom', function() {
+    return function(input, begin) {
+      if(input) {
+        begin = +begin; //convert to int
+          return input.slice(begin);
+        }
+      return [];
+    };
+  })
+  .directive('aaaePaginator', function() {
+    return {
+      restrict: 'E',
+      template: '<nav class="navbar"><ul><li><button class="button page-down" ng-click="pageDown()"> << </button></li><li><button class="button" disabled>{{currentPage}}</button></li><li><button class="button page-up" ng-click="pageUp()"> >> </button></li></ul></nav>',
+      scope: true
+    };
+  });

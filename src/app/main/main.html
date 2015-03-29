@@ -13,15 +13,15 @@
   <!--<p><a class="button" ng-href="#" >SPLENDID!</a></p>-->
 
   <div>
-  <input class="search" type="search" ng-model="search.fullName" placeholder="SEARCH BY NAME" ng-change="paginate()"> 
-  <select class="state_filter" type="select" ng-model="select.state" ng-change="paginate()">
-    <option value="">FILTER BY STATE</option>
-    <option ng-repeat="state in memberStates" value="{{state}}">{{state}}</option>
-  </select>
-  <div class="per-page">
-    <span class="per-page">PER PAGE: </span><select class="per-page" ng-model="pager.perPage" ng-init="pager.perPage = pager.pagerOptions[0]" ng-options="option for option in pager.pagerOptions" ng-change="paginate()">
+    <input class="search" type="search" ng-model="search.fullName" placeholder="SEARCH BY NAME" ng-change="paginate()"> 
+    <select class="state_filter" type="select" ng-model="select.state" ng-change="paginate()">
+      <option value="">FILTER BY STATE</option>
+      <option ng-repeat="state in memberStates" value="{{state}}">{{state}}</option>
     </select>
-  </div>
+    <div class="per-page">
+      <span class="per-page">PER PAGE: </span><select class="per-page" ng-model="pager.perPage" ng-init="pager.perPage = pager.pagerOptions[0]" ng-options="option for option in pager.pagerOptions" ng-change="paginate()">
+      </select>
+    </div>
   </div>
 
   <div class="table">
@@ -33,7 +33,7 @@
       <div class="th join-date">JOIN DATE</div>
       <div class="th right-top-rounded"></div>
     </div>
-    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in filterMembers = (members | filter:search | filter:select) | orderBy:'last_name' | startFrom:(pager.currentPage-1)*pager.perPage | limitTo:pager.perPage">
+    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in filterMembers = (members | filter:search | filter:select) | orderBy:'last_name' | aaaeStartFrom:(currentPage-1)*pager.perPage | limitTo:pager.perPage">
       <div class="td full-name">{{member.fullName}}</div>
       <div class="td address">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
       <div class="td phone">{{member.formattedPhone}}</div>
@@ -53,7 +53,9 @@
     </div>    
   </div>
 
-  <div class="footer">Page {{pager.currentPage}} of {{pager.numPages}}</div>
+  <div class="footer">
+    <aaae-paginator></aaae-paginator>
+  </div>
 
   <div class="footer">
     <hr class="gradient">

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleAssignment')
+angular.module('aaae')
   .controller('NavbarCtrl', function ($scope) {
     $scope.date = new Date();
   });
