@@ -1,17 +1,49 @@
 <div class="container">
 
-  <div ng-include="'components/navbar/navbar.html'"></div>
-
   <div class="jumbotron">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
+    <h1 class="banner">American Association of AngularJS Engineers</h1>
+    <p>
+      <img src="assets/images/angular.png" alt="American Association of AngularJS Engineers"><br>
     </p>
-    <p><a class="btn" ng-href="#">Splendid!</a></p>
+    <h1>Member Directory</h1>
   </div>
 
-  <div class="col" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
+  <!--<div ng-include="'components/navbar/navbar.html'"></div>-->
+
+  <!--<p><a class="button" ng-href="#" >SPLENDID!</a></p>-->
+
+  <input class="search" type="search" ng-model="search.full_name" placeholder="SEARCH BY NAME">
+
+  <div class="table">
+    <div class="tr">
+      <div class="th left-top-rounded">MEMBER NAME</div>
+      <div class="th">ADDRESS</div>
+      <div class="th">PHONE</div>
+      <div class="th">EMAIL</div>
+      <div class="th">JOIN DATE</div>
+      <div class="th right-top-rounded"></div>
+    </div>
+    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in members | orderBy:'last_name' | filter:search">
+      <div class="td">{{member.first_name}} {{member.last_name}}</div>
+      <div class="td">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
+      <div class="td">{{member.formatted_phone}}</div>
+      <div class="td"><a ng-href="mailto:{{member.email}}">{{member.email}}</a></div>
+      <div class="td">{{member.join_date}}</div>
+      <div class="td narrow">
+        <button type="button" class="button">MEMBER PROFILE</button>
+      </div>
+    </div>
+    <div class="tr">
+      <div class="th left-bottom-rounded">&nbsp;</div>
+      <div class="th"></div>
+      <div class="th"></div>
+      <div class="th"></div>
+      <div class="th"></div>
+      <div class="th right-bottom-rounded"></div>
+    </div>    
+  </div>
+
+<!--  <div class="col" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
     <div class="thumbnail">
       <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
       <div class="caption">
@@ -21,11 +53,10 @@
       </div>
     </div>
   </div>
-
-  <hr>
-
+-->
   <div class="footer">
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
+    <hr class="gradient">
+    <p>Copyright &copy; 2015 American Association of AngularJS Engineers. All rights reserved.</p>
   </div>
 
 </div>

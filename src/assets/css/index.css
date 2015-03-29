@@ -1,34 +1,141 @@
+/*  AngularJS Logo Colors
+    Light Side
+    Grey Border: B1B1B1
+    Red Shield: FC003B
+    Letter: FFFFFF
+    Dark Side
+    Grey Border: B1B1B1
+    Red Shield: CB1635
+    Letter: B3B3B3
+*/
+
 body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
   margin: 0;
+}
+
+.label {
+  font-weight: bold;
+  /* Choose a color */
+}
+
+.button {
+  background-color: #CB1635;
+  border-radius: 5px;
+  border: 1px solid #B1B1B1;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-color: #FFF;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.33;
+  margin: 12px;
+  padding: 5px 15px;
+  text-align: center;
+  vertical-align: middle;
+
+  /* Must be uppercase */
+}
+
+.left-top-rounded {
+  border-radius: 2px 0px 0px 0px;
+}
+
+.right-top-rounded {
+  border-radius: 0px 2px 0px 0px;
+}
+
+.left-bottom-rounded {
+  border-radius: 0px 0px 0px 2px;
+}
+
+.right-bottom-rounded {
+  border-radius: 0px 0px 2px 0px;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
+}
+
+.table.search {
+  margin-bottom: 20px;
+}
+
+.tr {
+  display: table-row;
+  /*border: 1px solid #FC003B;*/
+}
+
+.tr.alt {
+  background-color: #CCCCCC;
+}
+
+.th {
+  font-weight: bold;
+  /*text-align: center;*/
+  background-color: #CB1635;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.td {
+  /*border: 1px solid #CB1635;*/
+}
+
+.th, .td {
+  display: table-cell;
+  padding: 5px;
+}
+
+.narrow {
+  width: 180px;
+  text-align: center;
+  vertical-align: center;
 }
 
 a {
   text-decoration: none;
 }
 
+/* Link hover state */
+/* For buttons or a tags? */
+/* darken 25% */
+
+/* Click state */
+/* For buttons or a tags? */
+/* darken 25% */
+/* dim text 60% opacity */
+
 .container {
-  width: 90%;
-  max-width: 1170px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+  max-width: 1170px;
   padding-left: 10px;
   padding-right: 10px;
+  width: 95%;
 }
 
+/*
 .navbar {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
   background-color: #222;
+  margin-bottom: 20px;
+  min-height: 50px;
+  position: relative;
 }
 
 .navbar > a {
+  color: #DDD;
   float: left;
-  color: lightgrey;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
   height: 50px;
+  line-height: 20px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
 }
 
 .navbar ul {
@@ -54,42 +161,28 @@ a {
 .navbar ul li.active a {
   background-color: black;
 }
+*/
 
 .jumbotron {
-  padding: 60px;
-  margin-bottom: 30px;
-  background-color: gainsboro;
-  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0px 20px;
+  background-color: #CCCCCC;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
   text-align: center;
-}
-
-.btn {
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  color: white;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 6px;
 }
 
 .col {
   float: left;
-  width: 33.33%;
+  width: 31%;
   position: relative;
   padding-left: 10px;
   padding-right: 10px;
-  box-sizing: border-box;
 }
 
 .col .thumbnail {
   height: 200px;
-  border: 1px solid lightgrey;
+  border: 1px solid #DDD;
   border-radius: 4px;
   margin-bottom: 20px;
 }
@@ -106,8 +199,36 @@ a {
   float: right;
 }
 
+input.search {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
 hr {
   clear: both;
+}
+
+hr.gradient {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+
+.footer {
+  margin: 30px 0px;
+  text-align: center;
+}
+
+h1.banner {
+  margin: 10px 0px;
+  font-size: 40px;
 }
 
 @media screen and (max-width: 640px) {
