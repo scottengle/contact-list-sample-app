@@ -41,7 +41,7 @@
       <div class="td email"><a ng-href="mailto:{{member.email}}">{{member.email}}</a></div>
       <div class="td join-date">{{member.join_date}}</div>
       <div class="td narrow">
-        <button type="button" class="button">MEMBER PROFILE</button>
+        <button type="button" class="button" data="{{member.id}}" ng-click="displayMemberData(member.id)">MEMBER PROFILE</button>
       </div>
     </div>
     <div class="tr">

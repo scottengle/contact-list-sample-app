@@ -71,7 +71,7 @@ angular.module('aaae')
 
     $scope.paginateAndFilterStates = function() {
       $timeout(function() {
-        if($scope.select === 0 && $scope.search === "" && $scope.filterMembers.length) {
+        if($scope.select === 0 && $scope.search === '' && $scope.filterMembers.length) {
           $scope.memberStates = getStatesByMembers($scope.members);
           $scope.select = 0;
         } else if($scope.filterMembers.length) {
@@ -80,7 +80,7 @@ angular.module('aaae')
 
         $scope.paginate();
       }, 10);
-    }
+    };
 
     $scope.pageUp = function(newPage) {
       if($scope.currentPage < $scope.pager.numPages) {
@@ -96,9 +96,15 @@ angular.module('aaae')
 
     $scope.clearFilters = function() {
       $scope.select = 0;
-      $scope.search = "";
+      $scope.search = '';
       $scope.paginateAndFilterStates();
-    }
+    };
+
+    $scope.displayMemberData = function(id) {
+      if(id) {
+        alert(JSON.stringify($scope.members[id], 2));
+      }
+    };
 
   }])
   .filter('aaaeStartFrom', function() {
