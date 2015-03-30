@@ -12,12 +12,13 @@
 
   <!--<p><a class="button" ng-href="#" >SPLENDID!</a></p>-->
 
-  <div>
-    <input class="search" type="search" ng-model="search.fullName" placeholder="SEARCH BY NAME" ng-change="paginate()"> 
-    <select class="state_filter" type="select" ng-model="select.state" ng-change="paginate()">
+  <div class="table-controls">
+    <input class="search" type="search" ng-model="search.fullName" placeholder="SEARCH BY NAME" ng-change="paginateAndFilterStates()">
+    <select class="state-filter" type="select" ng-model="select.state" ng-change="paginateAndFilterStates()" ng-show="filterMembers.length > 0">
       <option value="">FILTER BY STATE</option>
       <option ng-repeat="state in memberStates" value="{{state}}">{{state}}</option>
     </select>
+    <button class="button clear-filters" ng-click="clearFilters()">CLEAR FILTERS</button>
     <div class="per-page">
       <span class="per-page">PER PAGE: </span><select class="per-page" ng-model="pager.perPage" ng-init="pager.perPage = pager.pagerOptions[0]" ng-options="option for option in pager.pagerOptions" ng-change="paginate()">
       </select>
@@ -36,7 +37,7 @@
     <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in filterMembers = (members | filter:search | filter:select) | orderBy:'last_name' | aaaeStartFrom:(currentPage-1)*pager.perPage | limitTo:pager.perPage">
       <div class="td full-name">{{member.fullName}}</div>
       <div class="td address">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
-      <div class="td phone">{{member.formattedPhone}}</div>
+      <div class="td phone"><a ng-href="tel:{{member.phone}}">{{member.formattedPhone}}</a></div>
       <div class="td email"><a ng-href="mailto:{{member.email}}">{{member.email}}</a></div>
       <div class="td join-date">{{member.join_date}}</div>
       <div class="td narrow">
@@ -50,7 +51,7 @@
       <div class="th email"></div>
       <div class="th join-date"></div>
       <div class="th right-bottom-rounded"></div>
-    </div>    
+    </div>
   </div>
 
   <div class="footer">

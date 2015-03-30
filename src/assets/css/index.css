@@ -5,7 +5,7 @@
     Letter: FFFFFF
     Dark Side
     Grey Border: B1B1B1
-    Red Shield: CB1635
+    Red Shield: CB1635, rgb(203, 22, 53), hsla(350, 80.4%, 44.1%)
     Letter: B3B3B3
 */
 
@@ -15,13 +15,19 @@ body {
   margin: 0;
 }
 
+h1.banner {
+  margin: 10px 0px;
+  font-size: 40px;
+}
+
 .label {
   font-weight: bold;
   /* Choose a color */
 }
 
 .button {
-  background-color: #CB1635;
+
+  background-color: hsla(350, 80.4%, 44.1%, 1.0);
   border-radius: 5px;
   border: 1px solid #B1B1B1;
   color: white;
@@ -29,82 +35,46 @@ body {
   display: inline-block;
   color: #FFF;
   font-weight: bold;
-  letter-spacing: 1px;
+  font-size: 12px;
   line-height: 1.33;
   margin: 12px;
   padding: 5px 15px;
   text-align: center;
   vertical-align: middle;
-
-  /* Must be uppercase */
 }
 
 .button:disabled {
   background-color: #FFFFFF;
   color: #000000;
   border: 1px solid #CB1635;
-}
-
-.left-top-rounded {
-  border-radius: 2px 0px 0px 0px;
-}
-
-.right-top-rounded {
-  border-radius: 0px 2px 0px 0px;
-}
-
-.left-bottom-rounded {
-  border-radius: 0px 0px 0px 2px;
-}
-
-.right-bottom-rounded {
-  border-radius: 0px 0px 2px 0px;
-}
-
-.table {
-  display: table;
-  width: 100%;
-  border-radius: 5px;
-  border: 2px solid #CB1635;
-}
-
-.table.search {
-  margin-bottom: 20px;
-}
-
-.tr {
-  display: table-row;
-  /*border: 1px solid #FC003B;*/
-}
-
-.tr.alt {
-  background-color: #CCCCCC;
-}
-
-.th {
   font-weight: bold;
-  /*text-align: center;*/
-  background-color: #CB1635;
-  color: #FFFFFF;
-  letter-spacing: 1px;
+  font-size: 12px;
+  cursor: default;
 }
 
-.td {
-  /*border: 1px solid #CB1635;*/
-}
-
-.th, .td {
-  display: table-cell;
-  padding: 5px;
-}
-
-.narrow {
-  width: 180px;
-  text-align: center;
-  vertical-align: center;
+.button:hover:enabled {
+  background-color: hsla(350, 80.4%, 24.1%, 1.0);
 }
 
 a {
+  text-decoration: none;
+}
+
+a:link {
+  color: hsla(350, 80.4%, 44.1%, 1.0);
+}
+
+a:visited {
+  color: hsla(350, 80.4%, 24.1%, 1.0);
+}
+
+a:hover {
+  color: hsla(350, 80.4%, 24.1%, 1.0);
+  text-decoration: underline;
+}
+
+a:active {
+  color: hsla(350, 80.4%, 24.1%, 0.6);
   text-decoration: none;
 }
 
@@ -125,6 +95,156 @@ a {
   padding-right: 10px;
   width: 95%;
 }
+
+.jumbotron {
+  padding: 10px;
+  margin: 10px 0px 20px;
+  background-color: #CCCCCC;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
+  text-align: center;
+}
+
+hr {
+  clear: both;
+}
+
+hr.gradient {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+
+.footer {
+  margin: 15px 0px;
+  text-align: center;
+}
+
+/* Start Tables */
+
+.table {
+  display: table;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
+}
+
+.table.search {
+  margin-bottom: 20px;
+}
+
+.tr {
+  display: table-row;
+}
+
+.tr.alt {
+  background-color: #CCCCCC;
+}
+
+.th {
+  font-weight: bold;
+  background-color: #CB1635;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.th, .td {
+  display: table-cell;
+  padding: 5px;
+}
+
+.full-name {
+  width: 11%;
+}
+
+.address {
+  width: 20%;
+}
+
+.phone {
+  width: 10%;
+}
+
+.email {
+  width: 30%;
+}
+
+.join-date {
+  width: 10%
+}
+
+.narrow {
+  width: 180px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.left-top-rounded {
+  border-radius: 2px 0px 0px 0px;
+}
+
+.right-top-rounded {
+  border-radius: 0px 2px 0px 0px;
+}
+
+.left-bottom-rounded {
+  border-radius: 0px 0px 0px 2px;
+}
+
+.right-bottom-rounded {
+  border-radius: 0px 0px 2px 0px;
+}
+
+/* End Tables */
+
+/* Start Table Controls */
+
+.table-controls {
+  margin-bottom: 20px;
+}
+
+input.search {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
+  margin-top: 10px;
+  padding: 5px;
+  float: left;
+  height: 30px;
+}
+
+select {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 2px solid #CB1635;
+  margin-top: 10px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+select.state-filter {
+  margin-left: 10px;
+  float: left;
+}
+
+span.per-page {
+  margin-right: 5px;
+}
+
+div.per-page {
+  float: right;
+  vertical-align: middle;
+}
+
+/* End Table Controls */
+
+/* Start Navbar */
 
 .navbar {
   margin-bottom: 20px;
@@ -163,14 +283,9 @@ a {
   background-color: black;
 }
 
-.jumbotron {
-  padding: 10px;
-  margin: 10px 0px 20px;
-  background-color: #CCCCCC;
-  border-radius: 5px;
-  border: 2px solid #CB1635;
-  text-align: center;
-}
+/* End Navbar */
+
+/* Start Content Columns */
 
 .col {
   float: left;
@@ -195,68 +310,40 @@ a {
   width: 50px;
 }
 
-.pull-right {
-  float: right;
+/* End Content Columns */
+
+/* Media Queries */
+
+/* Typical size tablets */
+@media screen and (max-width: 800px) {
+
+  .full-name {
+    width: 15%;
+  }
+
+  .phone {
+    width: 15%;
+  }
+
+  .address {
+    display: none;
+  }
+
+  .email {
+    width: 40%;
+  }
+
+  .join-date {
+    display: none;
+  }
+
+  .narrow {
+    width: 20%;
+    padding: 0px;
+  }
 }
 
-input.search {
-  font-family: 'Oswald', sans-serif;
-  font-size: 12px;
-  border-radius: 5px;
-  border: 2px solid #CB1635;
-  margin-bottom: 20px;
-  padding: 5px;
-  float: left;
-  height: 30px;
-}
-
-select {
-  font-family: 'Oswald', sans-serif;
-  font-size: 12px;
-  border-radius: 5px;
-  border: 2px solid #CB1635;
-  margin-bottom: 20px;
-  height: 30px;
-  padding: 5px;
-}
-
-select.state_filter {
-  margin-left: 30px;
-  float: left;
-}
-
-span.per-page {
-  margin-right: 5px;
-}
-
-div.per-page {
-  float: right;
-  vertical-align: middle;
-}
-
-hr {
-  clear: both;
-}
-
-hr.gradient {
-    border: 0;
-    height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-}
-
-.footer {
-  margin: 15px 0px;
-  text-align: center;
-}
-
-h1.banner {
-  margin: 10px 0px;
-  font-size: 40px;
-}
-
+/* iPhone 4S */
 @media screen and (max-width: 640px) {
   .col {
     float: left;
@@ -267,17 +354,57 @@ h1.banner {
     box-sizing: border-box;
   }
 
-  .address {
-    display: none;
+  .full-name {
+    width: 35%;
   }
 
   .phone {
+    width: 35%;
+  }
+
+  .email {
     display: none;
+  }
+}
+
+/* Correctly format table controls */
+@media screen and (max-width: 550px) {
+  input.search, select.state-filter, div.per-page {
+    float: left;
+    display: block;
+    clear: both;
+    width: 100%;
+    margin-left: 0px;
+    vertical-align: middle;
+  }
+
+  select.per-page {
+    float: right;
+    width: 80%;
+    display: inline-block;
+    margin-top: 0px;
+  }
+
+  span.per-page {
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+  .button.clear-filters {
+    margin-left: 0px;
+    clear: both;
+    display: inline-block;
+    width: 100%;
+  }
+
+  div.table-controls {
+    display: inline-block;
+    width: 100%;
   }
 
 }
 
-/* Media Queries */
+/* Normal screen Androids */
 @media screen and (max-width: 470px) {
 
   nav, .navbar {
@@ -287,41 +414,39 @@ h1.banner {
     width: 100%;
   }
 
-  .col {
-    display: block;
-    clear: both;
-    width: 100%;
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-
-  header nav li {
+  .navbar li {
     margin: 0;
     background: #efefef;
     display: block;
     margin-bottom: 3px;
   }
-  header nav a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-  }
 
-  .address {
-    display: none;
+  .full-name {
+    width: 25%;
   }
 
   .phone {
-    display: none;
-  }
-  
-  .email {
-    display: none;
+    width: 25%;
   }
 
-  .join-date {
+}
+
+/* Small screen Androids */
+@media screen and (max-width: 360px) {
+
+  .full-name {
+    width: 35%;
+  }
+
+  .phone {
+    width: 40%;
+  }
+
+}
+
+/* iPhone 3GS */
+@media screen and (max-width: 320px) {
+  .phone {
     display: none;
   }
 }
