@@ -22,7 +22,7 @@ h1.banner {
 
 .label {
   font-weight: bold;
-  /* Choose a color */
+  float: right;
 }
 
 .button {
@@ -122,6 +122,13 @@ hr.gradient {
   width: 100%;
 }
 
+.table.profile {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
 .table.search {
   margin-bottom: 20px;
 }
@@ -144,6 +151,14 @@ hr.gradient {
 .th, .td {
   display: table-cell;
   padding: 5px;
+}
+
+.td.profile-label {
+  vertical-align: top;
+}
+
+.td.profile-field {
+  vertical-align: top;
 }
 
 .full-name {
@@ -170,6 +185,13 @@ hr.gradient {
   text-align: center;
   vertical-align: center;
   width: 180px;
+}
+
+.back {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .left-top-rounded {

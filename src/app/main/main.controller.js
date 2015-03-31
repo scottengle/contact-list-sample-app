@@ -4,39 +4,36 @@
 
   angular.module('aaae')
 
-    .controller('MainCtrl',
-      [ '$scope',
-        '$http',
-        '$timeout',
-        'formatter',
-        'states',
-        'pagination',
-        function ($scope, $http, $timeout, formatter, states, pagination) {
+    .controller('MainCtrl', ['$scope', '$http', '$timeout', '$state', 'formatter', 'states', 'pagination', 'localStorage', 'data',
+      function ($scope, $http, $timeout, $state, formatter, states, pagination, localStorage, data) {
 
-          $scope.pager = {};
+        $scope.pager = {};
 
-          $scope.pager.pagerOptions = [10, 20, 50];
+        $scope.pager.pagerOptions = [10, 20, 50];
 
-          $scope.pager.perPage = $scope.pager.pagerOptions[0];
+        $scope.pager.perPage = $scope.pager.pagerOptions[0];
 
-          $scope.currentPage = 1;
+        $scope.currentPage = 1;
 
-          $scope.memberStates = [];
+        $scope.memberStates = [];
 
-          $scope.paginate = function() {
+        $scope.paginate = function() {
 
-            // Wait for the digest cycle to complete before proceeding
-            $timeout(function() {
+          // Wait for the digest cycle to complete before proceeding
+          $timeout(function() {
 
-              $scope.currentPage = 1;
+            $scope.currentPage = 1;
 
-              $scope.pager.numPages = pagination.getNumPages($scope.filterMembers,
-                                                             $scope.pager.perPage);
-            }, 10);
+            $scope.pager.numPages = pagination.getNumPages($scope.filterMembers,
+                                                           $scope.pager.perPage);
+          }, 10);
 
-          };
+        };
 
-          $scope.filterStates = function() {
+        $scope.filterStates = function() {
+
+          // Wait for the digest cycle to complete before proceeding
+          $timeout(function() {
 
             var memberList = ($scope.select === 0 &&
                               $scope.search === '' &&
@@ -45,90 +42,92 @@
 
             $scope.memberStates = states.getMemberStates(memberList);
 
-          };
+          }, 10);
 
-          $scope.paginateAndFilterStates = function() {
+        };
 
-            $scope.paginate();
+        $scope.paginateAndFilterStates = function() {
 
-            $scope.filterStates();
+          $scope.paginate();
 
-          };
+          $scope.filterStates();
 
-          $scope.pageUp = function(newPage) {
+        };
 
-            if($scope.currentPage < $scope.pager.numPages) {
+        $scope.pageUp = function(newPage) {
 
-              $scope.currentPage = newPage || $scope.currentPage + 1;
+          if($scope.currentPage < $scope.pager.numPages) {
 
-            }
+            $scope.currentPage = newPage || $scope.currentPage + 1;
 
-          };
+          }
 
-          $scope.pageDown = function(newPage) {
+        };
 
-            if($scope.currentPage > 1) {
+        $scope.pageDown = function(newPage) {
 
-              $scope.currentPage = newPage || $scope.currentPage - 1;
+          if($scope.currentPage > 1) {
 
-            }
+            $scope.currentPage = newPage || $scope.currentPage - 1;
 
-          };
+          }
 
-          $scope.clearFilters = function() {
+        };
 
-            $scope.select = 0;
+        $scope.clearFilters = function() {
 
-            $scope.search = '';
+          $scope.select = 0;
 
-            $scope.paginateAndFilterStates();
+          $scope.search = '';
 
-          };
+          $scope.paginateAndFilterStates();
 
-          // Temp function. Will be replaced with page to display data.
-          $scope.displayMemberData = function(id) {
+        };
 
-            if(id) {
+        $scope.displayMemberProfile = function(id) {
 
-              alert(JSON.stringify($scope.members[id], 2));
+          if(id) {
 
-            }
+            $state.go('profiles', {'memberId': id})
 
-          };
+          }
 
-          $http.get('/data/sample-data.json')
+        };
 
-            .then(function(resp) {
+        var cachedMembers = localStorage.get();
 
-              $scope.members = resp.data;
+        if(!cachedMembers.length) {
 
-            })
+          data.then(function(members) {
 
-            .then(function() {
+            localStorage.put(members);
 
-              angular.forEach($scope.members, function(member, idx) {
+            $scope.members = members;
 
-                member.formattedPhone = formatter.formatPhone(member.phone);
+          })
 
-                member.fullName = formatter.formatFullName(member.first_name,
-                                                           member.last_name);
+          .then(function() {
 
-                member.id = idx;
+            $scope.memberStates = states.getMemberStates($scope.members);
 
-              });
+          })
 
-              $scope.memberStates = states.getMemberStates($scope.members);
+          .then(function() {
 
-            })
+            $scope.pager.numPages = Math.ceil($scope.members.length/$scope.pager.perPage);
 
-            .then(function() {
+          });
 
-              $scope.pager.numPages = Math.ceil($scope.members.length/$scope.pager.perPage);
+        } else {
 
-            });
+          $scope.members = cachedMembers;
+
+          $scope.memberStates = states.getMemberStates($scope.members);
+
+          $scope.pager.numPages = Math.ceil($scope.members.length/$scope.pager.perPage);
 
         }
-      ]
-    );
+
+      }]);
 
 })();

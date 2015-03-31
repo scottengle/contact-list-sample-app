@@ -1,0 +1,54 @@
+<div class="table profile">
+  <div class="tr left-top-rounded right-top-rounded">&nbsp;</div>
+
+  <div class="tr">
+    <div class="td profile-label">
+      <span class="label">Name:</span>
+    </div>
+    <div class="td profile-field">
+      <span>{{member.fullName}}</span>
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td profile-label">
+    <span class="label">Address:</span>
+    </div>
+    <div class="td profile-field">
+      <span>{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</span>
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td profile-label">
+      <span class="label">Phone:</span>
+    </div>
+    <div class="td profile-field">
+      <span><a ng-href="tel:{{member.phone}}">{{member.formattedPhone}}</a></span>
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td profile-label">
+      <span class="label">Email:</span>
+    </div>
+    <div class="td profile-field">
+      <span><a ng-href="mailto:{{member.email}}">{{member.email}}</a></span>
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td profile-label">
+      <span class="label">Join Date:</span>
+    </div>
+    <div class="td profile-field">
+      <span>{{member.join_date}}</span>
+    </div>
+  </div>
+
+  <div class="tr">
+    <div class="td profile"> </div>
+    <div class="td profile"> </div>
+  </div>
+
+  <div class="tr left-top-rounded right-top-rounded">&nbsp;</div>
+
+</div>
+
+<div class="back"><button class="button" ui-sref="home">BACK TO MEMBER DIRECTORY</button></div>

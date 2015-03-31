@@ -16,6 +16,16 @@
 
           controller: 'MainCtrl'
 
+        })
+
+        .state('profiles', {
+
+          url: '/members/:memberId',
+
+          templateUrl: 'app/member/profiles.html',
+
+          controller: 'ProfilesCtrl'
+
         });
 
       $urlRouterProvider.otherwise('/');

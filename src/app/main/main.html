@@ -1,51 +1,35 @@
-<div class="container">
+<aaae-table-controls></aaae-table-controls>
 
-  <div class="jumbotron">
-    <h1 class="banner">American Association of AngularJS Engineers</h1>
-    <p>
-      <img src="assets/images/angular.png" alt="American Association of AngularJS Engineers"><br>
-    </p>
-    <h1>Member Directory</h1>
+<div class="table">
+  <div class="tr">
+    <div class="th full-name left-top-rounded">MEMBER NAME</div>
+    <div class="th address">ADDRESS</div>
+    <div class="th phone">PHONE</div>
+    <div class="th email">EMAIL</div>
+    <div class="th join-date">JOIN DATE</div>
+    <div class="th right-top-rounded"></div>
   </div>
-
-  <aaae-table-controls></aaae-table-controls>
-
-  <div class="table">
-    <div class="tr">
-      <div class="th full-name left-top-rounded">MEMBER NAME</div>
-      <div class="th address">ADDRESS</div>
-      <div class="th phone">PHONE</div>
-      <div class="th email">EMAIL</div>
-      <div class="th join-date">JOIN DATE</div>
-      <div class="th right-top-rounded"></div>
-    </div>
-    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in filterMembers = (members | filter:search | filter:select) | orderBy:'last_name' | startFrom:(currentPage-1)*pager.perPage | limitTo:pager.perPage">
-      <div class="td full-name">{{member.fullName}}</div>
-      <div class="td address">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
-      <div class="td phone"><a ng-href="tel:{{member.phone}}">{{member.formattedPhone}}</a></div>
-      <div class="td email"><a ng-href="mailto:{{member.email}}">{{member.email}}</a></div>
-      <div class="td join-date">{{member.join_date}}</div>
-      <div class="td narrow">
-        <button type="button" class="button" data="{{member.id}}" ng-click="displayMemberData(member.id)">MEMBER PROFILE</button>
-      </div>
-    </div>
-    <div class="tr">
-      <div class="th full-name left-bottom-rounded">&nbsp;</div>
-      <div class="th address"></div>
-      <div class="th phone"></div>
-      <div class="th email"></div>
-      <div class="th join-date"></div>
-      <div class="th right-bottom-rounded"></div>
+  <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in filterMembers = (members | filter:search | filter:select) | orderBy:'last_name' | startFrom:(currentPage-1)*pager.perPage | limitTo:pager.perPage">
+    <div class="td full-name">{{member.fullName}}</div>
+    <div class="td address">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
+    <div class="td phone"><a ng-href="tel:{{member.phone}}">{{member.formattedPhone}}</a></div>
+    <div class="td email"><a ng-href="mailto:{{member.email}}">{{member.email}}</a></div>
+    <div class="td join-date">{{member.join_date}}</div>
+    <div class="td narrow">
+      <button type="button" class="button" data="{{member.id}}" ng-click="displayMemberProfile(member.id)">VIEW PROFILE</button>
     </div>
   </div>
-
-  <div class="footer">
-    <aaae-paginator></aaae-paginator>
+  <div class="tr">
+    <div class="th full-name left-bottom-rounded">&nbsp;</div>
+    <div class="th address"></div>
+    <div class="th phone"></div>
+    <div class="th email"></div>
+    <div class="th join-date"></div>
+    <div class="th right-bottom-rounded"></div>
   </div>
-
-  <div class="footer">
-    <hr class="gradient">
-    <p>Copyright &copy; 2015 American Association of AngularJS Engineers. All rights reserved.</p>
-  </div>
-
 </div>
+
+<div class="footer">
+  <aaae-paginator></aaae-paginator>
+</div>
+
