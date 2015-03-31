@@ -19,7 +19,7 @@
       <div class="th join-date">JOIN DATE</div>
       <div class="th right-top-rounded"></div>
     </div>
-    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in filterMembers = (members | filter:search | filter:select) | orderBy:'last_name' | aaaeStartFrom:(currentPage-1)*pager.perPage | limitTo:pager.perPage">
+    <div ng-class-odd="'tr'" ng-class-even="'tr alt'" ng-repeat="member in filterMembers = (members | filter:search | filter:select) | orderBy:'last_name' | startFrom:(currentPage-1)*pager.perPage | limitTo:pager.perPage">
       <div class="td full-name">{{member.fullName}}</div>
       <div class="td address">{{member.address}}<br/>{{member.city}}, {{member.state}} {{member.zip}}</div>
       <div class="td phone"><a ng-href="tel:{{member.phone}}">{{member.formattedPhone}}</a></div>
