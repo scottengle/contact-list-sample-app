@@ -1,21 +1,25 @@
-'use strict';
+(function() {
 
-angular.module('aaae')
+  'use strict';
 
-  .filter('startFrom', function() {
+  angular.module('aaae')
 
-    return function(input, begin) {
+    .filter('startFrom', function() {
 
-      if(input) {
+      return function(input, begin) {
 
-        begin = +begin; //convert to int
+        if(input) {
 
-          return input.slice(begin);
+          begin = +begin; //convert to int
 
-        }
+            return input.slice(begin);
 
-      return [];
+          }
 
-    };
+        return [];
 
-  });
+      };
+
+    });
+
+})();

@@ -1,14 +1,18 @@
-'use strict';
+(function() {
 
-angular.module('aaae')
+  'use strict';
 
-  .directive('aaaePaginator', function() {
+  angular.module('aaae')
 
-    return {
-      restrict: 'E',
-      templateUrl: 'app/main/paginator.directive.html',
-      replace: true,
-      controller: 'MainCtrl'
-    };
+    .directive('aaaePaginator', function() {
 
-  });
+      return {
+        restrict: 'E',
+        templateUrl: 'app/main/paginator.directive.html',
+        replace: true,
+        controller: 'MainCtrl'
+      };
+
+    });
+
+})();

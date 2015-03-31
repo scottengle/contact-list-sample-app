@@ -1,31 +1,35 @@
-'use strict';
+(function() {
 
-angular.module('aaae')
+  'use strict';
 
-  .factory('states', function() {
+  angular.module('aaae')
 
-    return {
+    .factory('states', function() {
 
-      getMemberStates: function(members) {
+      return {
 
-        var states = [];
+        getMemberStates: function(members) {
 
-        angular.forEach(members, function(member) {
+          var states = [];
 
-          if(states.indexOf(member.state) === -1) {
+          angular.forEach(members, function(member) {
 
-            states.push(member.state);
+            if(states.indexOf(member.state) === -1) {
 
-          }
+              states.push(member.state);
 
-        });
+            }
 
-        states.sort();
+          });
 
-        return states;
+          states.sort();
 
-      }
+          return states;
 
-    };
+        }
 
-  });
+      };
+
+    });
+
+})();

@@ -1,19 +1,23 @@
-'use strict';
+(function() {
 
-angular.module('aaae')
+  'use strict';
 
-  .factory('pagination', function() {
+  angular.module('aaae')
 
-    return {
+    .factory('pagination', function() {
 
-      getNumPages: function(items, perPage) {
+      return {
 
-        perPage = perPage || 10; // Set a reasonable default. No division by zero.
+        getNumPages: function(items, perPage) {
 
-        return (items.length === 0) ? 1 : Math.ceil(items.length/perPage);
+          perPage = perPage || 10; // Set a reasonable default. No division by zero.
 
-      }
+          return (items.length === 0) ? 1 : Math.ceil(items.length/perPage);
 
-    };
+        }
 
-  });
+      };
+
+    });
+
+})();

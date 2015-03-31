@@ -1,41 +1,45 @@
-'use strict';
+(function() {
 
-angular.module('aaae')
+  'use strict';
 
-  .factory('formatter', function() {
+  angular.module('aaae')
 
-    return {
+    .factory('formatter', function() {
 
-      format: function() {
+      return {
 
-        var str = arguments[0];
+        format: function() {
 
-        for (var i=1; i<arguments.length; i++) {
+          var str = arguments[0];
 
-          var regEx = new RegExp('\\{' + (i-1) + '\\}', 'gm');
+          for (var i=1; i<arguments.length; i++) {
 
-          str = str.replace(regEx, arguments[i]);
+            var regEx = new RegExp('\\{' + (i-1) + '\\}', 'gm');
+
+            str = str.replace(regEx, arguments[i]);
+
+          }
+
+          return str;
+        },
+
+        formatPhone: function(phone) {
+
+          // Phone Numbers come in with fields separated by dashes
+          var phoneArr = phone.split('-');
+
+          return this.format('{0} ({1}) {2}-{3}', phoneArr[0], phoneArr[1], phoneArr[2], phoneArr[3]);
+
+        },
+
+        formatFullName: function(firstName, lastName) {
+
+          return this.format('{0} {1}', firstName, lastName);
 
         }
 
-        return str;
-      },
+      };
 
-      formatPhone: function(phone) {
+    });
 
-        // Phone Numbers come in with fields separated by dashes
-        var phoneArr = phone.split('-');
-
-        return this.format('{0} ({1}) {2}-{3}', phoneArr[0], phoneArr[1], phoneArr[2], phoneArr[3]);
-
-      },
-
-      formatFullName: function(firstName, lastName) {
-
-        return this.format('{0} {1}', firstName, lastName);
-
-      }
-
-    };
-
-  });
+})();

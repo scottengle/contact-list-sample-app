@@ -1,21 +1,25 @@
-'use strict';
+(function() {
 
-angular.module('aaae', ['ui.router'])
+  'use strict';
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  angular.module('aaae', ['ui.router'])
 
-    $stateProvider
+    .config(function ($stateProvider, $urlRouterProvider) {
 
-      .state('home', {
+      $stateProvider
 
-        url: '/',
+        .state('home', {
 
-        templateUrl: 'app/main/main.html',
+          url: '/',
 
-        controller: 'MainCtrl'
+          templateUrl: 'app/main/main.html',
 
-      });
+          controller: 'MainCtrl'
 
-    $urlRouterProvider.otherwise('/');
+        });
 
-  });
+      $urlRouterProvider.otherwise('/');
+
+    });
+
+})();

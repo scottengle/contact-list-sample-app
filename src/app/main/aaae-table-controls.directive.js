@@ -1,14 +1,18 @@
-'use strict';
+(function() {
 
-angular.module('aaae')
+  'use strict';
 
-  .directive('aaaeTableControls', function() {
+  angular.module('aaae')
 
-    return {
-      restrict: 'E',
-      templateUrl: 'app/main/tableControls.directive.html',
-      replace: true,
-      controller: 'MainCtrl'
-    };
+    .directive('aaaeTableControls', function() {
 
-  });
+      return {
+        restrict: 'E',
+        templateUrl: 'app/main/tableControls.directive.html',
+        replace: true,
+        controller: 'MainCtrl'
+      };
+
+    });
+
+})();
