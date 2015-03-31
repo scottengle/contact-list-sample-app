@@ -6,7 +6,7 @@
     </select>
     <button class="button clear-filters" ng-click="clearFilters()">CLEAR FILTERS</button>
     <div class="per-page">
-      <span class="per-page">PER PAGE: </span><select class="per-page" ng-model="pager.perPage" ng-init="pager.perPage = pager.pagerOptions[0]" ng-options="option for option in pager.pagerOptions" ng-change="paginate()">
+      <span class="per-page">PER PAGE: </span><select class="per-page" ng-model="pager.perPage" ng-options="option for option in pager.pagerOptions" ng-change="paginate()">
       </select>
     </div>
   </div>

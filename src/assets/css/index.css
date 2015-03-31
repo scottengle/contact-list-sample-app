@@ -16,8 +16,8 @@ body {
 }
 
 h1.banner {
-  margin: 10px 0px;
   font-size: 40px;
+  margin: 10px 0px;
 }
 
 .label {
@@ -26,16 +26,15 @@ h1.banner {
 }
 
 .button {
-
   background-color: hsla(350, 80.4%, 44.1%, 1.0);
   border-radius: 5px;
   border: 1px solid #B1B1B1;
+  color: #FFF;
   color: white;
   cursor: pointer;
   display: inline-block;
-  color: #FFF;
-  font-weight: bold;
   font-size: 12px;
+  font-weight: bold;
   line-height: 1.33;
   margin: 12px;
   padding: 5px 15px;
@@ -45,11 +44,11 @@ h1.banner {
 
 .button:disabled {
   background-color: #FFFFFF;
-  color: #000000;
   border: 1px solid #CB1635;
-  font-weight: bold;
-  font-size: 12px;
+  color: #000000;
   cursor: default;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .button:hover:enabled {
@@ -78,15 +77,6 @@ a:active {
   text-decoration: none;
 }
 
-/* Link hover state */
-/* For buttons or a tags? */
-/* darken 25% */
-
-/* Click state */
-/* For buttons or a tags? */
-/* darken 25% */
-/* dim text 60% opacity */
-
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -97,11 +87,11 @@ a:active {
 }
 
 .jumbotron {
-  padding: 10px;
-  margin: 10px 0px 20px;
   background-color: #CCCCCC;
   border-radius: 5px;
   border: 2px solid #CB1635;
+  margin: 10px 0px 20px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -110,12 +100,12 @@ hr {
 }
 
 hr.gradient {
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
     border: 0;
     height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
 
 .footer {
@@ -126,10 +116,10 @@ hr.gradient {
 /* Start Tables */
 
 .table {
-  display: table;
-  width: 100%;
   border-radius: 5px;
   border: 2px solid #CB1635;
+  display: table;
+  width: 100%;
 }
 
 .table.search {
@@ -145,9 +135,9 @@ hr.gradient {
 }
 
 .th {
-  font-weight: bold;
   background-color: #CB1635;
   color: #FFFFFF;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 
@@ -177,9 +167,9 @@ hr.gradient {
 }
 
 .narrow {
-  width: 180px;
   text-align: center;
   vertical-align: center;
+  width: 180px;
 }
 
 .left-top-rounded {
@@ -207,30 +197,30 @@ hr.gradient {
 }
 
 input.search {
-  font-family: 'Oswald', sans-serif;
-  font-size: 12px;
   border-radius: 5px;
   border: 2px solid #CB1635;
+  float: left;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  height: 30px;
   margin-top: 10px;
   padding: 5px;
-  float: left;
-  height: 30px;
 }
 
 select {
-  font-family: 'Oswald', sans-serif;
-  font-size: 12px;
   border-radius: 5px;
   border: 2px solid #CB1635;
-  margin-top: 10px;
-  height: 30px;
-  padding: 5px;
   cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  height: 30px;
+  margin-top: 10px;
+  padding: 5px;
 }
 
 select.state-filter {
-  margin-left: 10px;
   float: left;
+  margin-left: 10px;
 }
 
 span.per-page {
@@ -257,26 +247,26 @@ div.per-page {
   height: 50px;
   line-height: 20px;
   padding-left: 15px;
-  padding-top: 15px;
   padding-right: 15px;
+  padding-top: 15px;
 }
 
 .navbar ul {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .navbar ul li {
-  position: relative;
   display: inline;
+  position: relative;
 }
 
 .navbar ul li a {
   color: white;
-  position: relative;
   display: block;
-  padding: 15px;
   line-height: 20px;
+  padding: 15px;
+  position: relative;
 }
 
 .navbar ul li.active a {
@@ -289,16 +279,16 @@ div.per-page {
 
 .col {
   float: left;
-  width: 31%;
-  position: relative;
   padding-left: 10px;
   padding-right: 10px;
+  position: relative;
+  width: 31%;
 }
 
 .col .thumbnail {
-  height: 200px;
-  border: 1px solid #DDD;
   border-radius: 4px;
+  border: 1px solid #DDD;
+  height: 200px;
   margin-bottom: 20px;
 }
 
@@ -345,14 +335,6 @@ div.per-page {
 
 /* iPhone 4S */
 @media screen and (max-width: 640px) {
-  .col {
-    float: left;
-    width: 50%;
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
 
   .full-name {
     width: 35%;
@@ -369,20 +351,21 @@ div.per-page {
 
 /* Correctly format table controls */
 @media screen and (max-width: 550px) {
+
   input.search, select.state-filter, div.per-page {
-    float: left;
-    display: block;
     clear: both;
-    width: 100%;
+    display: block;
+    float: left;
     margin-left: 0px;
     vertical-align: middle;
+    width: 100%;
   }
 
   select.per-page {
-    float: right;
-    width: 80%;
     display: inline-block;
+    float: right;
     margin-top: 0px;
+    width: 80%;
   }
 
   span.per-page {
@@ -391,9 +374,9 @@ div.per-page {
   }
 
   .button.clear-filters {
-    margin-left: 0px;
     clear: both;
     display: inline-block;
+    margin-left: 0px;
     width: 100%;
   }
 
@@ -408,17 +391,17 @@ div.per-page {
 @media screen and (max-width: 470px) {
 
   nav, .navbar {
-    float: left;
     clear: left;
+    float: left;
     margin: 0 0 10px;
     width: 100%;
   }
 
   .navbar li {
-    margin: 0;
     background: #efefef;
     display: block;
     margin-bottom: 3px;
+    margin: 0;
   }
 
   .full-name {
@@ -446,7 +429,9 @@ div.per-page {
 
 /* iPhone 3GS */
 @media screen and (max-width: 320px) {
+
   .phone {
     display: none;
   }
+
 }
