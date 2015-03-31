@@ -1,0 +1,12 @@
+  <div class="table-controls">
+    <input class="search" type="search" ng-model="search.fullName" placeholder="SEARCH BY NAME" ng-change="paginateAndFilterStates()">
+    <select class="state-filter" type="select" ng-model="select.state" ng-change="paginateAndFilterStates()" ng-show="filterMembers.length > 0">
+      <option value="">FILTER BY STATE</option>
+      <option ng-repeat="state in memberStates" value="{{state}}">{{state}}</option>
+    </select>
+    <button class="button clear-filters" ng-click="clearFilters()">CLEAR FILTERS</button>
+    <div class="per-page">
+      <span class="per-page">PER PAGE: </span><select class="per-page" ng-model="pager.perPage" ng-init="pager.perPage = pager.pagerOptions[0]" ng-options="option for option in pager.pagerOptions" ng-change="paginate()">
+      </select>
+    </div>
+  </div>

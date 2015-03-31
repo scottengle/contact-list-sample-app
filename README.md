@@ -1,5 +1,21 @@
 # Sample Contact List Application
 
+### Set Up Instructions
+
+* You must have Node.js and npm installed as a prerequisite to these set up instructions
+
+*Install Node.js dependencies*
+
+    npm install
+
+*Install Bower components*
+
+    bower install
+
+*Build and run the application*
+
+    gulp
+
 ### Gulp
 
 Gulp Task | Description

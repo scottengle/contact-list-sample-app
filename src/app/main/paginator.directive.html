@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <ul>
+    <li>
+      <button class="button page-down" ng-click="pageDown(currentPage - 1)" ng-disabled="currentPage === 1"> << </button>
+    </li>
+    <li>
+      <button class="button" disabled>{{currentPage}}</button>
+    </li>
+    <li>
+      <button class="button page-up" ng-click="pageUp(currentPage + 1)" ng-disabled="currentPage === pager.numPages"> >> </button>
+    </li>
+  </ul>
+</nav>
