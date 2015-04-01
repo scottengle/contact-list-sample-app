@@ -12,6 +12,8 @@
 
           perPage = perPage || 10; // Set a reasonable default. No division by zero.
 
+          items = items || [];
+
           return (items.length === 0) ? 1 : Math.ceil(items.length/perPage);
 
         }

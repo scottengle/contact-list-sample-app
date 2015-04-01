@@ -9,7 +9,7 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: 'src/',
-      moduleName: 'gulpAngular'
+      moduleName: 'aaae'
     },
 
     browsers : ['PhantomJS'],
@@ -17,7 +17,8 @@ module.exports = function(config) {
     plugins : [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+      'karma-ng-html2js-preprocessor',
+      'karma-chrome-launcher'
     ],
 
     preprocessors: {

@@ -8,7 +8,7 @@
 
       return {
         restrict: 'E',
-        templateUrl: 'app/main/tableControls.directive.html',
+        templateUrl: 'app/components/tableControls.directive.html',
         replace: true,
         controller: 'MainCtrl'
       };

@@ -24,6 +24,8 @@
     "inject": false,
     "module": false,
     // JASMINE
+    "jasmine": true,
+    "spyOn": true,
     "describe": false,
     "it": false,
     "before": false,

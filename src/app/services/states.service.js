@@ -10,6 +10,8 @@
 
         getMemberStates: function(members) {
 
+          members = members || [];
+
           var states = [];
 
           angular.forEach(members, function(member) {

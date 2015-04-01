@@ -39,7 +39,15 @@
 
         });
 
-        return deferred.promise;
+        return {
+
+          get: function() {
+
+            return deferred.promise;
+
+          }
+
+        };
 
     }]);
 

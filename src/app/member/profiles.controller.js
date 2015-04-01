@@ -4,14 +4,14 @@
 
   angular.module('aaae')
 
-    .controller('ProfilesCtrl', ['$scope', '$stateParams', 'formatter', 'data', 'localStorage',
-      function ($scope, $stateParams, formatter, data, localStorage) {
+    .controller('ProfilesCtrl', ['$scope', '$stateParams', 'data', 'localStorage',
+      function ($scope, $stateParams, data, localStorage) {
 
         var cachedMembers = localStorage.get();
 
         if(!cachedMembers.length) {
 
-          data.then(function(members) {
+          data.get().then(function(members) {
 
             localStorage.put(members);
 

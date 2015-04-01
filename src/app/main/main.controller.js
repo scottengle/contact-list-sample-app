@@ -4,8 +4,9 @@
 
   angular.module('aaae')
 
-    .controller('MainCtrl', ['$scope', '$http', '$timeout', '$state', 'formatter', 'states', 'pagination', 'localStorage', 'data',
-      function ($scope, $http, $timeout, $state, formatter, states, pagination, localStorage, data) {
+    .controller('MainCtrl', ['$scope', '$timeout', '$state',
+                             'states', 'pagination', 'localStorage', 'data',
+      function ($scope, $timeout, $state, states, pagination, localStorage, data) {
 
         $scope.pager = {};
 
@@ -35,10 +36,10 @@
           // Wait for the digest cycle to complete before proceeding
           $timeout(function() {
 
-            var memberList = ($scope.select === 0 &&
-                              $scope.search === '' &&
-                              $scope.filterMembers.length) ?
-                              $scope.members : $scope.filterMembers;
+            var memberList = (($scope.select === 0 &&
+                               $scope.search === '') ||
+                               !$scope.filterMembers.length) ?
+                               $scope.members : $scope.filterMembers;
 
             $scope.memberStates = states.getMemberStates(memberList);
 
@@ -88,17 +89,18 @@
 
           if(id) {
 
-            $state.go('profiles', {'memberId': id})
+            $state.go('profiles', {'memberId': id});
 
           }
 
         };
 
+        // Get the data, if it isn't already cached
         var cachedMembers = localStorage.get();
 
         if(!cachedMembers.length) {
 
-          data.then(function(members) {
+          data.get().then(function(members) {
 
             localStorage.put(members);
 
@@ -109,10 +111,6 @@
           .then(function() {
 
             $scope.memberStates = states.getMemberStates($scope.members);
-
-          })
-
-          .then(function() {
 
             $scope.pager.numPages = Math.ceil($scope.members.length/$scope.pager.perPage);
 
