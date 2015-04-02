@@ -14,15 +14,15 @@ describe('The member details view', function () {
 
   it('should display the correct member details', function() {
 
-    expect(page.fullName.getText()).toEqual('Uriah Acevedo');
+    expect(page.fullName.getText()).toEqual('Iola Duke');
 
-    expect(page.address.getText()).toEqual('1210 In, Road\nLos Angeles, CA 94683');
+    expect(page.address.getText()).toEqual('P.O. Box 583, 7122 Eu Rd.\nAugusta, ME 61170');
 
-    expect(page.formattedPhone.getText()).toEqual('1 (236) 106-1076');
+    expect(page.formattedPhone.getText()).toEqual('1 (577) 130-7072');
 
-    expect(page.email.getText()).toEqual('quam.quis.diam@sociis.org');
+    expect(page.email.getText()).toEqual('dolor.dolor.tempus@Nam.org');
 
-    expect(page.joinDate.getText()).toEqual('07/09/2014');
+    expect(page.joinDate.getText()).toEqual('07/15/2014');
 
   });
 

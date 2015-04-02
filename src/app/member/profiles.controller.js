@@ -1,30 +1,42 @@
+/**
+ * Profiles Controller
+ * @namespace Controllers
+ */
 (function() {
 
   'use strict';
 
-  angular.module('aaae')
+  angular
+    .module('aaae')
+    .controller('ProfilesCtrl', ProfilesCtrl);
 
-    .controller('ProfilesCtrl', ['$scope', '$stateParams', 'data', 'localStorage',
-      function ($scope, $stateParams, data, localStorage) {
+  ProfilesCtrl.$inject = ['$scope', '$stateParams', 'data', 'localDataStore'];
 
-        var cachedMembers = localStorage.get();
+  /**
+   * @namespace ProfilesController
+   * @desc Application controller for the member profile page
+   * @memberOf Controllers
+   */
+  function ProfilesCtrl($scope, $stateParams, data, localDataStore) {
 
-        if(!cachedMembers.length) {
+    activate();
 
-          data.get().then(function(members) {
+    /* @name activate
+     * @desc Initializes the data-specific settings for the profiles page
+     * @memberOf Controllers.MainController
+     */
+    function activate() {
+      var cachedMembers = localDataStore.get();
 
-            localStorage.put(members);
-
-            $scope.member = members[$stateParams.memberId];
-
-          });
-
-        } else {
-
-          $scope.member = cachedMembers[$stateParams.memberId];
-
-        }
-
-      }]);
+      if(!cachedMembers.length) {
+        data.get().then(function(members) {
+          localDataStore.put(members);
+          $scope.member = members[$stateParams.memberId - 1];
+        });
+      } else {
+        $scope.member = cachedMembers[$stateParams.memberId - 1];
+      }
+    }
+  }
 
 })();

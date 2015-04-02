@@ -35,7 +35,7 @@ describe('profiles controller', function(){
 
   it('should initialize properly if data is not cached', function() {
 
-    inject(function($controller, $rootScope, $httpBackend, data, localStorage) {
+    inject(function($controller, $rootScope, $httpBackend, data, localDataStore) {
 
       $scope = $rootScope.$new();
 
@@ -43,7 +43,7 @@ describe('profiles controller', function(){
         $scope: $scope,
         $stateParams: {'memberId': 1},
         data: data,
-        localStorage: localStorage
+        localDataStore: localDataStore
       });
 
       $httpBackend.expectGET('/data/sample-data.json').respond(200, testMembers);
@@ -53,7 +53,7 @@ describe('profiles controller', function(){
 
     });
 
-    expect($scope.member.first_name).toEqual('Paloma');
+    expect($scope.member.first_name).toEqual('Maryam');
 
   });
 
@@ -61,9 +61,9 @@ describe('profiles controller', function(){
 
     var data;
 
-    inject(function($controller, $rootScope, $httpBackend, _data_, localStorage) {
+    inject(function($controller, $rootScope, $httpBackend, _data_, localDataStore) {
 
-      localStorage.put(testMembers);
+      localDataStore.put(testMembers);
 
       $scope = $rootScope.$new();
 
@@ -74,12 +74,12 @@ describe('profiles controller', function(){
         $scope: $scope,
         $stateParams: {'memberId': 1},
         data: _data_,
-        localStorage: localStorage
+        localDataStore: localDataStore
       });
 
     });
 
-    expect($scope.member.first_name).toEqual('Paloma');
+    expect($scope.member.first_name).toEqual('Maryam');
 
     expect(data.get).not.toHaveBeenCalled();
 

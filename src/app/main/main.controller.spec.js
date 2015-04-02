@@ -6,7 +6,7 @@ describe('main controller', function(){
       $timeout,
       $state,
       mainCtrl,
-      localStorage,
+      localDataStore,
       data,
 
       testMembers = [
@@ -38,7 +38,7 @@ describe('main controller', function(){
     module('aaae');
 
     inject(function($controller, $rootScope, $httpBackend, _$timeout_, _$state_,
-                    states, pagination, _localStorage_, _data_) {
+                    states, pagination, _localDataStore_, _data_) {
 
       $scope = $rootScope.$new();
 
@@ -48,8 +48,8 @@ describe('main controller', function(){
       spyOn( $state, 'go' );
       spyOn( $state, 'transitionTo' );
 
-      localStorage = _localStorage_;
-      spyOn(localStorage, 'get').and.callThrough();
+      localDataStore = _localDataStore_;
+      spyOn(localDataStore, 'get').and.callThrough();
 
       data = _data_;
       spyOn(data, 'get').and.callThrough();
@@ -60,7 +60,7 @@ describe('main controller', function(){
         $state: _$state_,
         states: states,
         pagination: pagination,
-        localStorage: _localStorage_,
+        localDataStore: _localDataStore_,
         data: _data_
       });
 

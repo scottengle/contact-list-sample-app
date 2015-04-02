@@ -56,6 +56,10 @@ h1.banner {
   background-color: hsla(350, 80.4%, 24.1%, 1.0);
 }
 
+.button:active:enabled {
+  background-color: hsla(350, 80.4%, 24.1%, 0.6);
+}
+
 a {
   text-decoration: none;
 }
@@ -300,7 +304,7 @@ div.per-page {
 
 /* Start Content Columns */
 
-.col {
+/*.col {
   float: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -321,7 +325,7 @@ div.per-page {
 
 .col .thumbnail img.pull-right {
   width: 50px;
-}
+}*/
 
 /* End Content Columns */
 
