@@ -31,7 +31,6 @@ h1.banner {
   border-radius: 5px;
   border: 1px solid #B1B1B1;
   color: #FFF;
-  color: white;
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
@@ -53,11 +52,11 @@ h1.banner {
 }
 
 .button:hover:enabled {
-  background-color: hsla(350, 80.4%, 24.1%, 1.0);
+  background-color: hsla(350, 80.4%, 33.1%, 1.0);
 }
 
 .button:active:enabled {
-  background-color: hsla(350, 80.4%, 24.1%, 0.6);
+  background-color: hsla(350, 80.4%, 33.1%, 0.6);
 }
 
 a {
@@ -69,16 +68,16 @@ a:link {
 }
 
 a:visited {
-  color: hsla(350, 80.4%, 24.1%, 1.0);
+  color: hsla(350, 80.4%, 33.1%, 1.0);
 }
 
 a:hover {
-  color: hsla(350, 80.4%, 24.1%, 1.0);
+  color: hsla(350, 80.4%, 33.1%, 1.0);
   text-decoration: underline;
 }
 
 a:active {
-  color: hsla(350, 80.4%, 24.1%, 0.6);
+  color: hsla(350, 80.4%, 33.1%, 0.6);
   text-decoration: none;
 }
 
