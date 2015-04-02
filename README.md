@@ -29,3 +29,9 @@ gulp protractor | Run the Selenium end-to-end tests
 ### BrowserSync
 
 BrowserSync admin page available at http://localhost:3001
+
+### Presentation Slides
+
+A corresponding presentation was created for this sample application. It can be found here:
+
+https://docs.google.com/presentation/d/1DtlwpDB0UbHD6NwLMjByEqZpOs4mTTAMZDfhq1Q0rdo/edit?usp=sharing
